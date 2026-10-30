@@ -29,6 +29,7 @@ public class ProgramStudent {
 			System.out.println("PASS");
 		}
 			scan.close();
-	}ex: // teste
+	}
+/* teste */
 
 }
