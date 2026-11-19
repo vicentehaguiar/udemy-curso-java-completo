@@ -49,14 +49,17 @@ public class Ninja {
 		} else {
 			System.out.println("Não é possivel utilizar essa quantidade");
 		}
-			return this.chakra;
+		return this.chakra;
 	}
 
 	public int train(int amount) {
 		if (amount > 0) {
 			this.chakra += amount;
-		}if (chakra > 100) {
-			this.chakra = 100;
+
+			if (chakra > 100) {
+				this.chakra = 100;
+			}
+
 		} else {
 			System.out.println("Valor invalido!");
 		}
@@ -66,10 +69,18 @@ public class Ninja {
 
 	public void completeMission() {
 		this.missionsCompleted += 1;
+		if (this.missionsCompleted < 5) {
+			this.rank = "Genin";
+		} else if (this.missionsCompleted < 10) {
+			this.rank = "Chunin";
+		} else {
+			this.rank = "Jounin";
+		}
+
 	}
 
 	public String toString() {
-		return "Nome: " + name + "\nVila: " + village +"\nPatente: " + rank + "\nIdade: " + age + "\nChakra: " + chakra
+		return "Nome: " + name + "\nVila: " + village + "\nPatente: " + rank + "\nIdade: " + age + "\nChakra: " + chakra
 				+ "\nMissões concluídas: " + missionsCompleted;
 	}
 
